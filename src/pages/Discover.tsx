@@ -159,6 +159,30 @@ const Discover = () => {
 
   const fetchEvents = async () => {
     try {
+      if (!supabase) {
+        setEvents([
+          {
+            id: '1',
+            title: 'Tech Innovation Hackathon 2025',
+            date: 'Jan 15, 2025',
+            time: '09:00 AM',
+            background_image_url: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop',
+            target_date: '2025-01-15T09:00:00Z',
+            address: 'San Francisco, CA'
+          },
+          {
+            id: '2',
+            title: 'Web Development Workshop',
+            date: 'Jan 20, 2025',
+            time: '02:00 PM',
+            background_image_url: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop',
+            target_date: '2025-01-20T14:00:00Z',
+            address: 'New York, NY'
+          }
+        ]);
+        setLoading(false);
+        return;
+      }
       const { data, error } = await supabase
         .from('events')
         .select('id, title, date, time, background_image_url, target_date, address')

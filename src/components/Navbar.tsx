@@ -15,6 +15,8 @@ export const Navbar: React.FC = () => {
   const [pendingRoute, setPendingRoute] = useState<string | null>(null);
 
   useEffect(() => {
+    if (!supabase) return;
+    
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null);
     });
