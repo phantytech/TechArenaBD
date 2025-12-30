@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X, Code2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { supabase } from '@/integrations/supabase/client';
 import { User } from '@supabase/supabase-js';
 import { AuthSheet } from './AuthSheet';
 import { ThemeToggle } from './ThemeToggle';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export const Navbar: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const [user, setUser] = useState<User | null>(null);
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -42,7 +45,7 @@ export const Navbar: React.FC = () => {
         {/* Logo */}
         <div className="bg-foreground text-background h-[34px] px-3 border border-foreground flex items-center justify-center gap-2">
           <Code2 className="w-4 h-4" />
-          <span className="text-[11px] font-bold uppercase tracking-wider hidden sm:inline">TechArena</span>
+          <span className="text-[11px] font-bold uppercase tracking-wider hidden sm:inline">{t('nav.techArena')}</span>
         </div>
 
         {/* Desktop Navigation */}
@@ -51,14 +54,14 @@ export const Navbar: React.FC = () => {
             to="/" 
             className="relative overflow-hidden bg-background text-foreground h-[34px] px-3 flex items-center text-[11px] font-medium uppercase border border-foreground border-l-0 leading-none group"
           >
-            <span className="relative z-10">DISCOVER</span>
+            <span className="relative z-10">{t('nav.discover')}</span>
             <span className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
           </Link>
           <Link 
             to="/about" 
             className="relative overflow-hidden bg-background text-foreground h-[34px] px-3 flex items-center text-[11px] font-medium uppercase border border-foreground border-l-0 leading-none group"
           >
-            <span className="relative z-10">ABOUT</span>
+            <span className="relative z-10">{t('nav.about')}</span>
             <span className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
           </Link>
           <button 
@@ -72,7 +75,7 @@ export const Navbar: React.FC = () => {
             }}
             className="relative overflow-hidden bg-background text-foreground h-[34px] px-3 flex items-center text-[11px] font-medium uppercase border-l-0 border border-foreground leading-none group"
           >
-            <span className="relative z-10">SUBMIT</span>
+            <span className="relative z-10">{t('nav.submit')}</span>
             <span className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
           </button>
           {user ? (
@@ -81,7 +84,7 @@ export const Navbar: React.FC = () => {
                 to="/my-events" 
                 className="relative overflow-hidden bg-background text-foreground h-[34px] px-3 flex items-center text-[11px] font-medium uppercase border-l-0 border border-foreground leading-none group"
               >
-                <span className="relative z-10">MY EVENTS</span>
+                <span className="relative z-10">{t('nav.myEvents')}</span>
                 <span className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
               </Link>
               <button 
@@ -90,7 +93,7 @@ export const Navbar: React.FC = () => {
                 }}
                 className="relative overflow-hidden bg-background text-foreground h-[34px] px-3 flex items-center text-[11px] font-medium uppercase border-l-0 border border-foreground leading-none group"
               >
-                <span className="relative z-10">SIGN OUT</span>
+                <span className="relative z-10">{t('nav.signOut')}</span>
                 <span className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
               </button>
             </>
@@ -99,7 +102,7 @@ export const Navbar: React.FC = () => {
               onClick={() => setIsAuthOpen(true)}
               className="relative overflow-hidden bg-background text-foreground h-[34px] px-3 flex items-center text-[11px] font-medium uppercase border-l-0 border border-foreground leading-none group"
             >
-              <span className="relative z-10">SIGN IN</span>
+              <span className="relative z-10">{t('nav.signIn')}</span>
               <span className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
             </button>
           )}
@@ -114,7 +117,7 @@ export const Navbar: React.FC = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-background text-[11px] font-medium uppercase tracking-wider"
               >
-                CLOSE
+                {t('nav.close')}
               </button>
             </div>
             
@@ -126,7 +129,7 @@ export const Navbar: React.FC = () => {
                 className="flex-1 flex items-center justify-center text-foreground text-[17px] font-medium uppercase border-b border-border tracking-[-0.34px] animate-fade-in"
                 style={{ animationDelay: '0.1s', animationFillMode: 'both' }}
               >
-                DISCOVER
+                {t('nav.discover')}
               </Link>
               <button 
                 onClick={() => {
@@ -141,7 +144,7 @@ export const Navbar: React.FC = () => {
                 className="flex-1 flex items-center justify-center text-foreground text-[17px] font-medium uppercase border-b border-border tracking-[-0.34px] animate-fade-in"
                 style={{ animationDelay: '0.2s', animationFillMode: 'both' }}
               >
-                SUBMIT EVENT
+                {t('nav.submitEvent')}
               </button>
               {user ? (
                 <>
@@ -151,7 +154,7 @@ export const Navbar: React.FC = () => {
                     className="flex-1 flex items-center justify-center text-foreground text-[17px] font-medium uppercase border-b border-border tracking-[-0.34px] animate-fade-in"
                     style={{ animationDelay: '0.3s', animationFillMode: 'both' }}
                   >
-                    MY EVENTS
+                    {t('nav.myEvents')}
                   </Link>
                   <button 
                     onClick={async () => {
@@ -161,7 +164,7 @@ export const Navbar: React.FC = () => {
                     className="flex-1 flex items-center justify-center text-foreground text-[17px] font-medium uppercase tracking-[-0.34px] animate-fade-in"
                     style={{ animationDelay: '0.4s', animationFillMode: 'both' }}
                   >
-                    SIGN OUT
+                    {t('nav.signOut')}
                   </button>
                 </>
               ) : (
@@ -173,7 +176,7 @@ export const Navbar: React.FC = () => {
                   className="flex-1 flex items-center justify-center text-foreground text-[17px] font-medium uppercase tracking-[-0.34px] animate-fade-in"
                   style={{ animationDelay: '0.3s', animationFillMode: 'both' }}
                 >
-                  SIGN IN
+                  {t('nav.signIn')}
                 </button>
               )}
             </div>
@@ -185,7 +188,21 @@ export const Navbar: React.FC = () => {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="md:hidden relative overflow-hidden bg-background text-foreground h-[34px] px-3 border border-l-0 border-foreground flex items-center justify-center text-[11px] font-medium uppercase leading-none group"
         >
-          <span className="relative z-10">MENU</span>
+          <span className="relative z-10">{t('nav.menu')}</span>
+          <span className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
+        </button>
+
+        {/* Language Switcher Button */}
+        <button 
+          onClick={() => {
+            const newLang = i18n.language === 'en' ? 'bn' : 'en';
+            i18n.changeLanguage(newLang);
+            localStorage.setItem('language', newLang);
+          }}
+          className="relative overflow-hidden bg-background text-foreground h-[34px] px-3 border border-l-0 border-foreground flex items-center justify-center text-[11px] font-medium uppercase leading-none group gap-1.5"
+          title={i18n.language === 'en' ? 'Switch to Bangla' : 'Switch to English'}
+        >
+          <span className="relative z-10">🌐 {i18n.language === 'en' ? 'EN' : 'BN'}</span>
           <span className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
         </button>
       </nav>

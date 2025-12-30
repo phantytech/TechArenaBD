@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "discover": "DISCOVER",
+    "about": "ABOUT",
+    "submit": "SUBMIT",
+    "myEvents": "MY EVENTS",
+    "signOut": "SIGN OUT",
+    "signIn": "SIGN IN",
+    "menu": "MENU",
+    "close": "CLOSE",
+    "submitEvent": "SUBMIT EVENT",
+    "techArena": "TechArena"
+  },
+  "discover": {
+    "title": "Discover Tech Events",
+    "description": "Find the best tech events happening around you",
+    "filterByDate": "Filter by Date",
+    "searchPlaceholder": "Search events...",
+    "noEvents": "No events found",
+    "eventType": {
+      "hackathon": "Hackathon",
+      "competition": "Competition",
+      "workshop": "Workshop",
+      "meetup": "Meetup"
+    },
+    "liveNow": "LIVE NOW",
+    "upcoming": "Upcoming Events in {{location}}",
+    "all": "All Events"
+  },
+  "eventDetail": {
+    "register": "Register Now",
+    "goBack": "Go Back",
+    "registrations": "Registrations",
+    "creator": "Creator",
+    "date": "Date",
+    "time": "Time",
+    "location": "Location",
+    "description": "Description",
+    "deleteEvent": "Delete Event",
+    "editEvent": "Edit Event",
+    "alreadyRegistered": "Already Registered",
+    "signInToRegister": "Sign in to register"
+  },
+  "createEvent": {
+    "title": "Create a New Event",
+    "eventTitle": "Event Title",
+    "description": "Description",
+    "date": "Date",
+    "time": "Time",
+    "address": "Address",
+    "imageUrl": "Background Image URL",
+    "submit": "Create Event",
+    "cancel": "Cancel",
+    "required": "This field is required",
+    "success": "Event created successfully!"
+  },
+  "editEvent": {
+    "title": "Edit Event",
+    "submit": "Update Event",
+    "cancel": "Cancel",
+    "success": "Event updated successfully!"
+  },
+  "myEvents": {
+    "title": "My Events",
+    "noEvents": "You haven't created any events yet",
+    "create": "Create an Event",
+    "edit": "Edit",
+    "delete": "Delete",
+    "registrations": "Registrations"
+  },
+  "about": {
+    "title": "About TechArena",
+    "description": "TechArena is a platform for discovering and participating in amazing tech events",
+    "features": {
+      "discover": "Discover Events",
+      "share": "Share Your Event",
+      "connect": "Connect with Community"
+    }
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "submit": "Submit",
+    "or": "or",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success!",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back",
+    "next": "Next"
+  }
+}
