@@ -25,7 +25,33 @@
     },
     "liveNow": "LIVE NOW",
     "upcoming": "Upcoming Events in {{location}}",
-    "all": "All Events"
+    "all": "the world"
+  },
+  "about": {
+    "title": "About TechArena",
+    "description": "Connecting innovators, organizers, and participants across Bangladesh's thriving technology ecosystem",
+    "mission": "Our Mission",
+    "forOrganizers": "For the Organizers",
+    "forOrganizersText": "We empower event creators to reach talented individuals and build thriving communities through a centralized, premium platform.",
+    "forParticipants": "For the Participants",
+    "forParticipantsText": "We connect you to opportunities that elevate your skills, expand your network, and accelerate your career in tech.",
+    "innovation": "Innovation",
+    "innovationText": "Fostering creative problem-solving",
+    "community": "Community",
+    "communityText": "Building connections that matter",
+    "excellence": "Excellence",
+    "excellenceText": "Pursuing the highest standards",
+    "accessibility": "Accessibility",
+    "accessibilityText": "Opportunities for all talents",
+    "impact": "Impact by Numbers",
+    "eventsHosted": "Events Hosted",
+    "participants": "Participants",
+    "organizers": "Organizers",
+    "available": "Available Online",
+    "builtFor": "Built for Bangladesh",
+    "builtForText": "TechArena is dedicated to nurturing Bangladesh's tech talent. We celebrate the nation's growing innovation ecosystem and provide a platform where dreams become reality.",
+    "exploreBangla": "বাংলাদেশের প্রযুক্তি সম্প্রদায়কে উন্নীত করতে আমরা প্রতিশ্রুতিবদ্ধ। আপনার প্রতিভা প্রদর্শন করুন এবং অসাধারণ সুযোগ আনলক করুন।",
+    "exploreEvents": "Explore Events"
   },
   "eventDetail": {
     "register": "Register Now",
@@ -66,16 +92,10 @@
     "create": "Create an Event",
     "edit": "Edit",
     "delete": "Delete",
-    "registrations": "Registrations"
-  },
-  "about": {
-    "title": "About TechArena",
-    "description": "TechArena is a platform for discovering and participating in amazing tech events",
-    "features": {
-      "discover": "Discover Events",
-      "share": "Share Your Event",
-      "connect": "Connect with Community"
-    }
+    "registrations": "Registrations",
+    "confirmDelete": "Are you sure you want to delete this event?",
+    "created": "Created",
+    "registered": "Registered"
   },
   "auth": {
     "signIn": "Sign In",

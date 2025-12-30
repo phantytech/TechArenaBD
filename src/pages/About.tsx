@@ -1,9 +1,11 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ArrowRight, Users, Target, Zap, Globe } from 'lucide-react';
 
 export default function About() {
+  const { t } = useTranslation();
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -12,10 +14,10 @@ export default function About() {
       <section className="pt-32 md:pt-40 lg:pt-48 pb-16 md:pb-24 px-4 md:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 md:mb-8">
-            About TechArena
+            {t('about.title')}
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Connecting innovators, organizers, and participants across Bangladesh's thriving technology ecosystem
+            {t('about.description')}
           </p>
         </div>
       </section>
@@ -25,7 +27,7 @@ export default function About() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-medium">Our Mission</h2>
+              <h2 className="text-3xl md:text-4xl font-medium">{t('about.mission')}</h2>
               <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
                 <p>
                   <strong>For the Organizers</strong> — We empower event creators to reach talented individuals and build thriving communities through a centralized, premium platform.

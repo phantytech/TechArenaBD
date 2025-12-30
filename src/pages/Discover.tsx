@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Calendar } from '@/components/ui/calendar';
@@ -37,6 +38,7 @@ const EventCard = ({
   event: Event;
 }) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   
   const isEventLive = () => {
     const now = new Date().getTime();
@@ -83,7 +85,7 @@ const EventCard = ({
         </div>
         {eventLive && (
           <div className="bg-tech-green text-background border border-t-0 border-border px-3 h-[23px] flex items-center">
-            <div className="text-[11px] font-medium uppercase leading-none animate-pulse">LIVE NOW</div>
+            <div className="text-[11px] font-medium uppercase leading-none animate-pulse">{t('discover.liveNow')}</div>
           </div>
         )}
       </div>
@@ -94,10 +96,11 @@ const EventCard = ({
 };
 
 const Discover = () => {
+  const { t } = useTranslation();
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
-  const [userCountry, setUserCountry] = useState<string>('the world');
+  const [userCountry, setUserCountry] = useState<string>(t('discover.all'));
   const [initialDateSet, setInitialDateSet] = useState(false);
 
   useEffect(() => {

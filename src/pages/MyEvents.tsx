@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Navbar } from '@/components/Navbar';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
@@ -26,9 +27,11 @@ const EventCard = ({
 }) => {
   const navigate = useNavigate();
   
+  const { t } = useTranslation();
+  
   const handleDelete = async (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (window.confirm('Are you sure you want to delete this event?')) {
+    if (window.confirm(t('myEvents.confirmDelete') || 'Are you sure you want to delete this event?')) {
       onDelete?.(event.id);
     }
   };
@@ -67,6 +70,7 @@ const EventCard = ({
 };
 
 const MyEvents = () => {
+  const { t } = useTranslation();
   const [user, setUser] = useState<User | null>(null);
   const [createdEvents, setCreatedEvents] = useState<Event[]>([]);
   const [registeredEvents, setRegisteredEvents] = useState<Event[]>([]);
