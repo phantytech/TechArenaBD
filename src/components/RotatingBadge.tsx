@@ -45,7 +45,7 @@ export const RotatingBadge: React.FC<RotatingBadgeProps> = ({
             <path id="circlePath" d="M 100, 30 a 70,70 0 1,1 0,140 a 70,70 0 1,1 0,-140" />
           </defs>
           {Array.from({ length: repetitions }).map((_, index) => (
-            <text key={index} className="text-[16px] font-bold uppercase" fill="black">
+            <text key={index} className="text-[16px] font-bold uppercase" fill="white">
               <textPath href="#circlePath" startOffset={`${index * offsetIncrement}%`}>
                 {text}
               </textPath>

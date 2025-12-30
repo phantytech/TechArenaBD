@@ -9,6 +9,7 @@ import Admin from "./pages/Admin";
 import MyEvents from "./pages/MyEvents";
 import CreateEvent from "./pages/CreateEvent";
 import EditEvent from "./pages/EditEvent";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
     <Sonner />
     <Routes>
       <Route path="/" element={<Discover />} />
+      <Route path="/about" element={<About />} />
       <Route path="/event/:id" element={<Index />} />
       <Route path="/event/:id/edit" element={<EditEvent />} />
       <Route path="/my-events" element={<MyEvents />} />

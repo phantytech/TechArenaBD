@@ -130,9 +130,10 @@ export const Footer: React.FC = () => {
 
           {/* Bottom section */}
           <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-6 text-sm text-muted-foreground">
-              <span>© {currentYear} TechArena</span>
+            <div className="flex items-center gap-6 text-sm text-muted-foreground flex-wrap justify-center md:justify-start">
+              <span>© 2026 TechArena • Bangladesh</span>
               <span className="hidden sm:inline">•</span>
+              <a href="/about" className="hover:text-primary transition-colors">About</a>
               <a href="#" className="hover:text-primary transition-colors hidden sm:inline">Privacy</a>
               <a href="#" className="hover:text-primary transition-colors hidden sm:inline">Terms</a>
             </div>

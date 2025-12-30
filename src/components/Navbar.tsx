@@ -54,6 +54,13 @@ export const Navbar: React.FC = () => {
             <span className="relative z-10">DISCOVER</span>
             <span className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
           </Link>
+          <Link 
+            to="/about" 
+            className="relative overflow-hidden bg-background text-foreground h-[34px] px-3 flex items-center text-[11px] font-medium uppercase border border-foreground border-l-0 leading-none group"
+          >
+            <span className="relative z-10">ABOUT</span>
+            <span className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></span>
+          </Link>
           <button 
             onClick={() => {
               if (user) {

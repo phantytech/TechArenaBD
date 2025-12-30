@@ -225,15 +225,23 @@ const Discover = () => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-6 md:mb-10 inline-flex flex-col items-center" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
             <div className="flex items-center flex-wrap justify-center">
               <span className="border border-border px-3 md:px-6 py-2 md:py-4 animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>Discover</span>
-              <span className="bg-primary text-primary-foreground border border-primary px-3 md:px-6 py-2 md:py-4 rounded-[20px] md:rounded-[40px] -ml-px animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>tech</span>
+              <span className="bg-primary text-primary-foreground border border-primary px-3 md:px-6 py-2 md:py-4 rounded-[20px] md:rounded-[40px] -ml-px animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>সেরা Tech</span>
             </div>
             <div className="flex items-center flex-wrap justify-center -mt-px">
-              <span className="border border-border px-3 md:px-6 py-2 md:py-4 animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>competitions</span>
+              <span className="border border-border px-3 md:px-6 py-2 md:py-4 animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>events in Bangladesh</span>
             </div>
           </h1>
-          <p className="text-sm md:text-base lg:text-[18px] text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.7s', animationFillMode: 'both' }}>
-            Find upcoming hackathons, coding contests, science olympiads, and tech workshops. Join the community of innovators and compete with the best.
-          </p>
+          <div className="space-y-4 animate-fade-in max-w-2xl mx-auto" style={{ animationDelay: '0.7s', animationFillMode: 'both' }}>
+            <p className="text-sm md:text-base lg:text-[18px] text-muted-foreground">
+              For the Organizers • For the Participants
+            </p>
+            <p className="text-xs md:text-sm lg:text-base text-muted-foreground leading-relaxed">
+              আপনার পরবর্তী হ্যাকাথন, প্রতিযোগিতা বা কর্মশালা খুঁজে পান। উদ্ভাবক এবং প্রযুক্তি উৎসাহীদের একটি প্রাণবন্ত সম্প্রদায়ের সাথে যোগ দিন।
+            </p>
+            <p className="text-xs md:text-sm lg:text-base text-muted-foreground">
+              Find upcoming hackathons, coding contests, and tech workshops. Join Bangladesh's thriving tech community.
+            </p>
+          </div>
           
           {/* Category pills */}
           <div className="flex flex-wrap justify-center gap-2 mt-8 animate-fade-in" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
