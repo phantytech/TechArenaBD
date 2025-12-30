@@ -227,35 +227,35 @@ const Discover = () => {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-6 md:mb-10 inline-flex flex-col items-center" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
             <div className="flex items-center flex-wrap justify-center">
-              <span className="border border-border px-3 md:px-6 py-2 md:py-4 animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>Discover</span>
-              <span className="bg-primary text-primary-foreground border border-primary px-3 md:px-6 py-2 md:py-4 rounded-[20px] md:rounded-[40px] -ml-px animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>Best Tech</span>
+              <span className="border border-border px-3 md:px-6 py-2 md:py-4 animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>{t('discover.discover')}</span>
+              <span className="bg-primary text-primary-foreground border border-primary px-3 md:px-6 py-2 md:py-4 rounded-[20px] md:rounded-[40px] -ml-px animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>{t('discover.bestTech')}</span>
             </div>
             <div className="flex items-center flex-wrap justify-center -mt-px">
-              <span className="border border-border px-3 md:px-6 py-2 md:py-4 animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>events in Bangladesh</span>
+              <span className="border border-border px-3 md:px-6 py-2 md:py-4 animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>{t('discover.eventsInBangladesh')}</span>
             </div>
           </h1>
           <div className="space-y-4 animate-fade-in max-w-2xl mx-auto" style={{ animationDelay: '0.7s', animationFillMode: 'both' }}>
             <p className="text-sm md:text-base lg:text-[18px] text-muted-foreground">
-              For the Organizers • For the Participants
+              {t('discover.forOrganizers')} • {t('discover.forParticipants')}
             </p>
             <p className="text-xs md:text-sm lg:text-base text-muted-foreground">
-              Find upcoming hackathons, coding contests, and tech workshops. Join Bangladesh's thriving tech community.
+              {t('discover.findUpcoming')}
             </p>
           </div>
           
           {/* Category pills */}
           <div className="flex flex-wrap justify-center gap-2 mt-8 animate-fade-in" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
             <span className="px-4 py-2 bg-secondary text-secondary-foreground text-sm font-medium rounded-full border border-border flex items-center gap-2">
-              <Code className="w-4 h-4" /> Hackathons
+              <Code className="w-4 h-4" /> {t('discover.hackathons')}
             </span>
             <span className="px-4 py-2 bg-secondary text-secondary-foreground text-sm font-medium rounded-full border border-border flex items-center gap-2">
-              <Trophy className="w-4 h-4" /> Competitions
+              <Trophy className="w-4 h-4" /> {t('discover.competitions')}
             </span>
             <span className="px-4 py-2 bg-secondary text-secondary-foreground text-sm font-medium rounded-full border border-border flex items-center gap-2">
-              <Lightbulb className="w-4 h-4" /> Workshops
+              <Lightbulb className="w-4 h-4" /> {t('discover.workshops')}
             </span>
             <span className="px-4 py-2 bg-secondary text-secondary-foreground text-sm font-medium rounded-full border border-border flex items-center gap-2">
-              <Users className="w-4 h-4" /> Meetups
+              <Users className="w-4 h-4" /> {t('discover.meetups')}
             </span>
           </div>
         </div>
@@ -268,7 +268,7 @@ const Discover = () => {
       <section id="events-section" className="px-4 md:px-8 pb-16 pt-6 md:pt-16">
         <div>
           <div className="flex flex-wrap items-center gap-0 mb-6 md:mb-8 animate-fade-in" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
-            <h2 className="text-base md:text-lg lg:text-xl font-normal w-full sm:w-auto mb-2 sm:mb-0 text-foreground">Browsing events in</h2>
+            <h2 className="text-base md:text-lg lg:text-xl font-normal w-full sm:w-auto mb-2 sm:mb-0 text-foreground">{t('discover.browsingEventsIn')}</h2>
             <span className="text-base md:text-lg lg:text-xl font-normal border border-border bg-secondary px-2 py-1 sm:ml-2 text-foreground">{userCountry}</span>
             
             {/* Calendar button for mobile/tablet */}
@@ -282,7 +282,7 @@ const Discover = () => {
                     )}
                   >
                     <CalendarIcon className="mr-2 h-4 w-4" />
-                    {date ? format(date, "MMM do, yyyy") : <span>Pick a date</span>}
+                    {date ? format(date, "MMM do, yyyy") : <span>{t('discover.pickDate')}</span>}
                   </button>
                 </PopoverTrigger>
                 <PopoverContent className="w-auto p-0" align="start">
@@ -306,10 +306,10 @@ const Discover = () => {
             {/* Event Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:col-start-2 gap-5">
               {loading ? (
-                <div className="col-span-full text-center py-12 text-muted-foreground">Loading events...</div>
+                <div className="col-span-full text-center py-12 text-muted-foreground">{t('discover.loadingEvents')}</div>
               ) : filteredEvents.length === 0 ? (
                 <div className="col-span-full text-center py-12 text-muted-foreground">
-                  {date ? `No events found for ${date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}` : 'No events found. Be the first to submit one!'}
+                  {date ? `${t('discover.noEventsForDate')} ${date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}` : t('discover.noEventsFound')}
                 </div>
               ) : (
                 filteredEvents.map((event, index) => (
