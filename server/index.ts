@@ -1,12 +1,16 @@
 import express from 'express';
 import cors from 'cors';
 import routes from './routes';
+import { seedDemoEvents } from './seed';
 
 const app = express();
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Seed demo events on startup
+seedDemoEvents().catch(console.error);
 
 // API routes
 app.use(routes);

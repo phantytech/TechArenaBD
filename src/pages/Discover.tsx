@@ -63,14 +63,16 @@ const EventCard = ({
   
   return (
     <div 
-      className="relative cursor-pointer group"
+      className="relative cursor-pointer group card-hover"
       onClick={() => navigate(`/event/${event.id}`)}
     >
-      <div className="overflow-hidden mb-3 border border-border">
+      <div className="overflow-hidden mb-3 border border-border card-shadow-lg">
         <div 
-          className="aspect-square bg-muted bg-cover bg-center transition-transform duration-500 ease-out group-hover:scale-110"
+          className="aspect-square bg-muted bg-cover bg-center transition-transform duration-500 ease-out group-hover:scale-110 relative"
           style={{ backgroundImage: `url(${event.background_image_url})` }}
-        ></div>
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
       </div>
       <div className="absolute top-4 left-4 flex flex-col gap-0">
         <div className="bg-background border border-border px-3 h-[23px] flex items-center gap-1.5">
