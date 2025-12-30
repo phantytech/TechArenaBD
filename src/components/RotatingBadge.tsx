@@ -37,7 +37,7 @@ export const RotatingBadge: React.FC<RotatingBadgeProps> = ({
     >
       {/* Rotating badge background */}
       <div className="w-full h-full animate-[spin_20s_linear_infinite]">
-        <img src={badgeImage} alt="Badge" className="w-full h-full" />
+        <img src={badgeImage} alt="Badge" className="w-full h-full" style={{ filter: 'hue-rotate(240deg)' }} />
         
         {/* Circular text repeated around badge */}
         <svg viewBox="0 0 200 200" className="w-full h-full absolute inset-0">
