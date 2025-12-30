@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { supabase } from '@/integrations/supabase/client';
 import { useNavigate } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import { apiRequest } from '@/lib/queryClient';
 
 interface Event {
   id: string;
@@ -12,39 +13,13 @@ interface Event {
 }
 
 export const EventsCarousel = () => {
-  const [events, setEvents] = useState<Event[]>([]);
   const navigate = useNavigate();
+  const { data: events = [] } = useQuery({
+    queryKey: ['/api/events'],
+    queryFn: () => apiRequest('/api/events'),
+  });
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      if (!supabase) {
-        setEvents([
-          {
-            id: '1',
-            title: 'Tech Innovation Hackathon 2025',
-            background_image_url: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop',
-            address: 'San Francisco, CA',
-            date: 'Jan 15, 2025',
-            time: '09:00 AM'
-          }
-        ]);
-        return;
-      }
-      const { data, error } = await supabase
-        .from('events')
-        .select('id, title, background_image_url, address, date, time')
-        .order('target_date', { ascending: false })
-        .limit(10);
-
-      if (data && !error) {
-        setEvents(data);
-      }
-    };
-
-    fetchEvents();
-  }, []);
-
-  if (events.length === 0) return null;
+  if (!events || events.length === 0) return null;
 
   // Duplicate the events array exactly twice for seamless loop
   const multipliedEvents = [...events, ...events];
